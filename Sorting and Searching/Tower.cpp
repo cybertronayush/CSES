@@ -20,4 +20,4 @@ int main() {
 		else x[lo] = z; 
 	}
 	cout << sz(x);
-}
+} 

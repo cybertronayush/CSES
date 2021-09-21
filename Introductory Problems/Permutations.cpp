@@ -1,47 +1,40 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#define lli long long int
 using namespace std;
-typedef long long ll;
+
 int main()
 {
-	ll n;
-	cin >> n;
-	if (n == 1)
-	{
-		cout << "1" << endl;
- 
-	}
-	else if (n == 3||n == 2)
-	{
-		cout<<"NO SOLUTION" << endl;
-	}
-	else
-	{
-		ll i, j;
-		if (n % 2 == 0)
-		{
-			for ( i=2; i<=n;i =i+2)
-			{
-				cout << i << " ";
-			}
-			for (j=1;j <=n-1; j=j+2)
-			{
-				cout << j << " ";
-			}
-		}
-		else {
-			for (i = 1;i<= n;i=i +2)
-			{
-				cout << i << " ";
-			}
-			for (j=2; j<=n -1;j =j + 2)
-			{
-				cout <<j<< " ";
-			}
-		}
- 
-	}
- 
- 
-	return 0;
- 
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;
+    cin >> n;
+    if (n == 1)
+    {
+        cout << "1";
+    }
+    else if (n < 4)
+    {
+        cout << "NO SOLUTION";
+    }
+    else if (n == 4)
+    {
+        cout << "3 1 4 2";
+    }
+    else
+    {
+        // print odds
+        for (int i = 1; i <= n; i += 2)
+        {
+            cout << i << " ";
+        }
+        // print evens
+        for (int i = 2; i <= n; i += 2)
+        {
+            cout << i << " ";
+        }
+    }
+    return 0;
 }

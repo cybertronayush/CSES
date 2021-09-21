@@ -3,31 +3,33 @@
 #define li long int
 #define ld long double
 using namespace std;
-int main(){
+const lli mod = 1e9 + 7;
 
-	int n,m,k;
-	cin >>n>> m>> k;
-	//vector<Apartment>
-	vector<int> apl(n);
-	vector<int> apa(m);
-	for(int i = 0; i < n; i++)
-        cin >> apl[i];
-    for(int i = 0; i < m; i++)
-        cin >> apa[i];
-	sort(apl.begin(),apl.end());
-	sort(apa.begin(),apa.end());
-	//2pointer :
-	int ans=0;
-	int i = 0;
-	int j = 0;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n, m, k;
+    cin >> n >> m >> k;
+    vector<int> peeps(n);
+    vector<int> apps(m);
+    for (int i = 0; i < n; i++)
+        cin >> peeps[i];
+    for (int i = 0; i < m; i++)
+        cin >> apps[i];
+    sort(peeps.begin(), peeps.end());
+    sort(apps.begin(), apps.end());
+    int ans = 0;
+    int i = 0, j = 0;
     while (i < n && j < m)
     {
-        if (abs(apl[i] - apa[j]) <= k){
+        if (abs(peeps[i] - apps[j]) <= k)
+        {
             ans++;
             i++;
             j++;
         }
-        else if (apl[i] < apa[j])
+        else if (peeps[i] < apps[j])
         {
             i++;
         }
